@@ -7,18 +7,18 @@
 </head>
 <body>
   <h1>検索チーム結果</h1>
-  <strong>球団名</strong><br />
+  <h2>球団名</h2><br/>
   <span th:text="${team.teamName}"></span><br />
 
-  <strong>本拠地</strong><br />
+  <h2>本拠地</h2><br/>
   <span th:text="${team.headquarters}"></span><br />
 
-  <strong>発足</strong><br />
+  <h2>発足</h2><br/>
   <span th:text="${team.inauguration}"></span><br />
 
-  <strong>歴史</strong><br />
+  <h2>歴史</h2><br/>
   <pre th:text="${team.history}"></pre>
-  <br />
+  
 
   <input type="button" onclick="history.back()" value="戻る">
 </body>
