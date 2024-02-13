@@ -8,9 +8,9 @@
 <body>
   <h2>衣類検索</h2>
   <form th:action="@{/search}" method="post">
-    <label for="male">男性</label>
+    <label for="male">Man</label>
     <input type="checkbox" id="male" name="gender" value="male">
-    <label for="female">女性</label>
+    <label for="female">Woman</label>
     <input type="checkbox" id="female" name="gender" value="female">
 
     <p>色を選択してください:</p>
@@ -24,6 +24,22 @@
       <button>検索</button>
     </div>
 </form>
+<table>
+  <thead>
+    <tr>
+      <th>ジャンル</th>
+      <th>サイズ</th>
+      <th>価格</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr th:each="hotel : ${hotelList}">
+      <td th:text="${hotel.hotelName}"></td>
+      <td th:text="${hotel.nearestStation}"></td>
+      <td th:text="${hotel.price}"></td>
+    </tr> -->
+  </tbody>
+</table>
   
 </body>
 </html>
