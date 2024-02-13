@@ -7,24 +7,28 @@
 </head>
 <body>
   <h2>衣類検索</h2>
-  <form th:action="@{/search}" method="post">
-    <label for="male">Man</label>
-    <input type="checkbox" id="male" name="gender" value="male">
-    <label for="female">Woman</label>
-    <input type="checkbox" id="female" name="gender" value="female">
-
+  <form th:action="@{/fashion/search}" method="post">
+    <div>
+      <label for="male">Man</label>
+      <input type="radio" id="male" name="gender" th:checked="${gender == '0'}" value="0"/>
+    </div>
+    <div>
+      <label for="female">Women</label>
+      <input type="radio" id="female" name="gender" th:checked="${gender == '1'}" value="1"/>
+    </div>
+  </div>
     <p>色を選択してください:</p>
     <select id="color" name="color">
-        <option value="red">赤</option>
-        <option value="blue">青</option>
-        <option value="white">黄</option>
-        <option value="yellow">白</option>
+      <option th:selected="${color == '赤'}" value="赤">赤</option>
+      <option th:selected="${color == '青'}" value="青">青</option>
+      <option th:selected="${color == '白'}" value="白">白</option>
+      <option th:selected="${color == '黄'}" value="黄">黄</option>
     </select>
     <div>
       <button>検索</button>
     </div>
 </form>
-<table>
+<table border="2">
   <thead>
     <tr>
       <th>ジャンル</th>
@@ -33,11 +37,11 @@
     </tr>
   </thead>
   <tbody>
-    <!-- <tr th:each="hotel : ${hotelList}">
-      <td th:text="${hotel.hotelName}"></td>
-      <td th:text="${hotel.nearestStation}"></td>
-      <td th:text="${hotel.price}"></td>
-    </tr> -->
+    <tr th:each="fashion : ${fashionSearchList}">
+      <td th:text="${fashion.genre}"></td>
+      <td th:text="${fashion.size}"></td>
+      <td th:text="${fashion.price}"></td>
+    </tr>
   </tbody>
 </table>
   

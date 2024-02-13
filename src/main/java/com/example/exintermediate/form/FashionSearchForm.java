@@ -1,9 +1,11 @@
 package com.example.exintermediate.form;
 
+//今回の処理ではformクラスはいらないが学習のために書いた。
+
 public class FashionSearchForm {
   private String category;
   private String genre;
-  private String gender;
+  private Integer gender;
   private String color;
   private String price;
   private String size;
@@ -14,7 +16,7 @@ public class FashionSearchForm {
    * @param genre    ジャンル
    * @param gender   性別
    * @param color    カラー
-   * @param price    価格
+   * @param price    価格 価格はDBにはint型で登録されていてもユーザーがら送られてくる際はstring型で送られてくるのでstring型にしておく。dbに登録する際はコントローラで型変換を行う。今回は登録処理がないので書かなくて良い。
    * @param size     サイズ
    */
 
@@ -60,7 +62,7 @@ public class FashionSearchForm {
    * @return 性別
    */
 
-  public String getGender() {
+  public Integer getGender() {
     return gender;
   }
 
@@ -69,7 +71,7 @@ public class FashionSearchForm {
    * 
    * @param gender 性別
    */
-  public void setGender(String gender) {
+  public void setGender(Integer gender) {
     this.gender = gender;
   }
 
